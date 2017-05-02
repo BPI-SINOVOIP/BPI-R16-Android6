@@ -211,6 +211,8 @@ ifeq ($(CONFIG_OS), $(OPTION_OS_ANDROID))
             $(warning A83)
         else ifeq (tulip, $(product)) #A64
             CONFIG_CHIP = $(OPTION_CHIP_1689)
+        else ifeq (bpi, $(product)) # R16 BPI-M2M
+            CONFIG_CHIP = $(OPTION_CHIP_1667)
         else ifeq (kylin, $(product)) #A80
             CONFIG_CHIP = $(OPTION_CHIP_1639)
         else ifeq (magton, $(product)) #V40
