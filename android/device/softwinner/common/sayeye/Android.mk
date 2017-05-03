@@ -41,6 +41,11 @@ endif
 ifeq ($(TARGET_BOARD_PLATFORM), astar)
 LOCAL_CFLAGS   += -DSUN8IW5P1
 endif
+#BPI-M2M
+ifeq ($(TARGET_BOARD_PLATFORM), bpi)
+LOCAL_CFLAGS   += -DSUN8IW5P1
+endif
+
 ifeq ($(TARGET_BOARD_PLATFORM), octopus)
 LOCAL_CFLAGS   += -DSUN8IW6P1
 endif
@@ -69,6 +74,10 @@ ifeq ($(TARGET_BOARD_PLATFORM), kylin)
 LOCAL_CFLAGS   += -DSUN9IW1P1
 endif
 ifeq ($(TARGET_BOARD_PLATFORM), astar)
+LOCAL_CFLAGS   += -DSUN8IW5P1
+endif
+#BPI-M2M
+ifeq ($(TARGET_BOARD_PLATFORM), bpi)
 LOCAL_CFLAGS   += -DSUN8IW5P1
 endif
 ifeq ($(TARGET_BOARD_PLATFORM), octopus)

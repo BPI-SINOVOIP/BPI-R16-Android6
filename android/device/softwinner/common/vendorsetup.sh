@@ -52,6 +52,10 @@ function get_lichee_out_dir()
     if [ "$TARGET_BOARD_PLATFORM" == "astar" ]; then
         LINUXOUT_DIR=$LICHEE_DIR/out/sun8iw5p1/android/common
     fi
+    #BPI-M2M
+    if [ "$TARGET_BOARD_PLATFORM" == "bpi" ]; then
+        LINUXOUT_DIR=$LICHEE_DIR/out/sun8iw5p1/android/common
+    fi
     if [ "$TARGET_BOARD_PLATFORM" == "octopus" ]; then
         LINUXOUT_DIR=$LICHEE_DIR/out/sun8iw6p1/android/common
     fi
