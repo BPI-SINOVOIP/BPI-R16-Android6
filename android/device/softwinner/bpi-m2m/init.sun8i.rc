@@ -72,6 +72,11 @@ on early-fs
         insmod /system/vendor/modules/gt9xxnew_ts.ko
 
 
+ # BPI-M664-GPIO 
+        chmod 777 /sys/class/gpio_sw/PL2/data
+	chmod 777 /sys/class/gpio_sw/PC7/data
+
+     
 
 
 # bluetooth
@@ -111,6 +116,9 @@ on early-fs
 
     
 
+   #Justin 20170517 Porting for BPI-M2M-Root Start
+     setenforce 0
+   #Justin 20170517 Porting for BPI-M2M-Root End
 
 
 on post-fs-data

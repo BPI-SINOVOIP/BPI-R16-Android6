@@ -27,6 +27,7 @@ BOARD_FUSE_SDCARD := true
 BOARD_SEPOLICY_DIRS := \
     device/softwinner/astar-common/sepolicy
 
+#Justin Porting for BPI-M2M Root Start
 BOARD_SEPOLICY_UNION := \
 	bluetooth.te \
 	device.te \
@@ -50,7 +51,9 @@ BOARD_SEPOLICY_UNION := \
 	vold.te \
 	wpa.te \
     file.te \
-    logger.te
+    logger.te \
+	platform_app.te
+#Justin Porting for BPI-M2M Root End
 
 USE_OPENGL_RENDERER := true
 
