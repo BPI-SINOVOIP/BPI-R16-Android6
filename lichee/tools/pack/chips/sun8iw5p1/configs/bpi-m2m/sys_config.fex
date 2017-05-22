@@ -246,7 +246,7 @@ twi_sda         = port:PH05<2><default><default><default>
 
 
 [twi2]
-twi_used        = 0
+twi_used        = 1
 twi_scl         = port:PE12<3><default><default><default>
 twi_sda         = port:PE13<3><default><default><default>
 
@@ -668,13 +668,10 @@ vip_csi_d5               = port:PE09<2><default><default><default>
 vip_csi_d6               = port:PE10<2><default><default><default>
 vip_csi_d7               = port:PE11<2><default><default><default>
 
-vip_csi_sck              = port:PE12<2><default><default><default>
-vip_csi_sda              = port:PE13<2><default><default><default>
-
  
 vip_dev0_mname           = "ov5640"
 vip_dev0_pos             = "rear"
-vip_dev0_lane            = 4
+vip_dev0_lane            = 0
 vip_dev0_twi_id          = 2
 vip_dev0_twi_addr        = 0x78
 vip_dev0_isp_used        = 0
@@ -697,7 +694,7 @@ vip_dev0_flash_en        =
 vip_dev0_flash_mode      =
 vip_dev0_af_pwdn         =
 
-vip_dev0_act_used        = 0
+vip_dev0_act_used        = 1
 vip_dev0_act_name        = "dw9714_act"
 vip_dev0_act_slave       = 0x18
 
