@@ -22,4 +22,4 @@
 
 #!/bin/bash
 add_lunch_combo bpi_m2m-eng
-
+add_lunch_combo bpi_m2m-user
