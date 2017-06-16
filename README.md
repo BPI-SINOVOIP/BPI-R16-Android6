@@ -9,6 +9,7 @@
 Welcome to mkscript setup progress
 
 All available chips:
+
    1.sun8iw5p1
 
 Choice: 1
