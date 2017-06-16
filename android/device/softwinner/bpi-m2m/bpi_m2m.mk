@@ -40,12 +40,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.managed_users.xml:system/etc/permissions/android.software.managed_users.xml
 
+# BPI-M2_Magic Touch KeyCode
 PRODUCT_COPY_FILES += \
     device/softwinner/bpi-m2m/configs/camera.cfg:system/etc/camera.cfg \
     device/softwinner/bpi-m2m/configs/gsensor.cfg:system/usr/gsensor.cfg \
     device/softwinner/bpi-m2m/configs/media_profiles.xml:system/etc/media_profiles.xml \
     device/softwinner/bpi-m2m/configs/sunxi-keyboard.kl:system/usr/keylayout/sunxi-keyboard.kl \
-    device/softwinner/bpi-m2m/configs/tp.idc:system/usr/idc/tp.idc
+    device/softwinner/bpi-m2m/configs/tp.idc:system/usr/idc/tp.idc \
+    device/softwinner/bpi-m2m/configs/gt9xxnew_ts.kl:system/usr/keylayout/gt9xxnew_ts.kl
+
 
 #PRODUCT_COPY_FILES += \
 #   device/softwinner/bpi-m2m/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
