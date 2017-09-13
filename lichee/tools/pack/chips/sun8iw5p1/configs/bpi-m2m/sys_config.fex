@@ -354,7 +354,7 @@ mode          = 0
 ;----------------------------------------------------------------------------------
 [ctp_para]
 ctp_used            = 1
-ctp_name            = "gt9xxnew_ts"
+ctp_name            = "gt9147_bpi"
 ctp_twi_id          = 0
 ctp_twi_addr        = 0x5d
 ctp_screen_max_x    = 720
@@ -383,6 +383,7 @@ gslX680                   = 0
 gslX680new                = 0
 gt9xx_ts                  = 0
 gt9xxnew_ts               = 1
+gt9147_bpi                = 1
 gt9xxf_ts                 = 0
 tu_ts                     = 0
 gt818_ts                  = 0
