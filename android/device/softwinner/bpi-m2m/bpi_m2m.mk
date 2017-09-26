@@ -132,6 +132,7 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_CONFIG := mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
+# BPI-M2_Magic supports GMS
 $(call inherit-product-if-exists, vendor/google/products/gms_base.mk)
 
 #for 8723bs-vq0,should setmacaddr
