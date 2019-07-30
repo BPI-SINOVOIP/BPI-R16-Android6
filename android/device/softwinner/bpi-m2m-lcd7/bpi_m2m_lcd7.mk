@@ -116,7 +116,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # BPI-M2_Magic
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240
+    ro.sf.lcd_density=120
 
 # BPI-M2_Magic
 PRODUCT_PROPERTY_OVERRIDES += \
