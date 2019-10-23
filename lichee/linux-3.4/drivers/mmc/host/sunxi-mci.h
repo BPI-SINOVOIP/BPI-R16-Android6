@@ -23,7 +23,7 @@
 #endif
 
 #define DRIVER_NAME "sunxi-mmc"
-#define DRIVER_RIVISION "v1.109 2014-12-4 20:51"
+#define DRIVER_RIVISION "v1.119 2016-03-24 20:00"
 #define DRIVER_VERSION "SD/MMC/SDIO Host Controller Driver(" DRIVER_RIVISION ")" \
 			" Compiled in " __DATE__ " at " __TIME__""
 
@@ -139,6 +139,11 @@
 #define MMC_1MOD_CLK     "sdmmc1mod"
 #define MMC_2MOD_CLK     "sdmmc2mod"
 
+//secure storage relate
+#define MAX_SECURE_STORAGE_MAX_ITEM			32
+#define SDMMC_SECURE_STORAGE_START_ADD	(6*1024*1024/512)//6M
+#define SDMMC_ITEM_SIZE									(4*1024/512)//4K
+
 #define	SUNXI_CCM_BASE	 	0x01c20000
 #define SUNXI_PIO_BASE		0x01c20800
 
@@ -234,6 +239,7 @@
 #if defined CONFIG_ARCH_SUN8IW5 || defined CONFIG_ARCH_SUN8IW6 || defined CONFIG_ARCH_SUN8IW8 \
 	|| defined (CONFIG_ARCH_SUN8IW7) || defined CONFIG_ARCH_SUN8IW9
 #define SDXC_REG_NTSR       ( 0x5C )//SMC Newtiming Set Register
+#define SDXC_REG_AUTO_PH    (0x60)
 #endif
 #define SDXC_REG_HWRST	( 0x78 ) // SMC Card Hardware Reset for Register
 #define SDXC_REG_DMAC	( 0x80 ) // SMC IDMAC Control Register
@@ -398,10 +404,14 @@ struct sunxi_mmc_ctrl_regs {
 	u32 clkc;
 	u32 timeout;
 	u32 buswid;
+	u32 imask;
 	u32 waterlvl;
 	u32 funcsel;
 	u32 debugc;
 	u32 idmacc;
+	u32 thldc;
+	u32 ntsr;
+ 
 };
 
 /* UHS-I Operation Modes
@@ -471,7 +481,7 @@ struct sunxi_mmc_platform_data {
 	char* power_supply;
 #if defined(CONFIG_ARCH_SUN8IW5P1) || defined(CONFIG_ARCH_SUN8IW6P1) \
 		||defined(CONFIG_ARCH_SUN8IW8P1) || defined(CONFIG_ARCH_SUN8IW7P1) \
-		|| defined(CONFIG_ARCH_SUN8IW9P1) 
+		|| defined(CONFIG_ARCH_SUN8IW9P1)
 	u32  used_2xmod;
 	u32  used_ddrmode;
 #endif
@@ -612,5 +622,9 @@ struct sunxi_mmc_host {
 #ifndef	__io_address
 #define __io_address(n)     IOMEM(IO_ADDRESS(n))
 #endif
+
+
+extern void sunxi_mci_regs_save(struct sunxi_mmc_host *smc_host);
+extern void sunxi_mci_regs_restore(struct sunxi_mmc_host *smc_host);
 
 #endif
